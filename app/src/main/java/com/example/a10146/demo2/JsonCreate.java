@@ -115,9 +115,9 @@ public class JsonCreate {
 //        }
 //    }
 //        @Override
-//        public String toString() {
-//            return "AccountObject [Name=" + Name + ", Sex=" + Sex + ", examAdd=" + examAdd.toString()
-//                    + ", schoolAdd=" + schoolAdd.toString() + ",School="+ School + ",Grade="+ Grade + ",Class="+ Clas + "]\n\n";
-//        }
+        public String toString() {
+            return "AccountObject [Name=" + Name + ", Sex=" + Sex + ", examAdd=" + examAdd.toString()
+                    + ", schoolAdd=" + schoolAdd.toString() + ",School="+ School + ",Grade="+ Grade + ",Class="+ Clas + "]\n\n";
+        }
 
 }

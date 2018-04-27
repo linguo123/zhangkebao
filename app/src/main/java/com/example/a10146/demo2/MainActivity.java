@@ -4,20 +4,29 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bigkoo.pickerview.OptionsPickerView;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.tencent.tauth.IUiListener;
+import com.tencent.tauth.Tencent;
+import com.tencent.tauth.UiError;
+
+import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
+
+
     private EditText edit_username;
     private EditText edit_password;
     private TextView find_password;
@@ -25,8 +34,12 @@ public class MainActivity extends AppCompatActivity {
     private  TextView smsRegister;
     private Button login_btn;
     private static final String TAG = "MainActivity";
+    Tencent mTencent;
+    BaseUiListener qqlistener = new BaseUiListener();
+    private ImageButton qq;
 
- private OptionsPickerView city;
+    private OptionsPickerView city;
+
 
 
     @Override
@@ -34,18 +47,25 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
       //  loadCityData.initJsonData(this);
+        mTencent = Tencent.createInstance("1106790301", this.getApplicationContext());
         initView();
 
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+            Tencent.onActivityResultData(requestCode,resultCode,data,qqlistener);
+    }
 
-      private void initView() {
+
+    private void initView() {
        //   registerbtn = (TextView) findViewById(R.id.registerbtn);
           find_password = (TextView) findViewById(R.id.find_password);
           edit_username = (EditText) findViewById(R.id.edit_username);
           edit_password = (EditText) findViewById(R.id.edit_password);
           login_btn = (Button) findViewById(R.id.login_btn);
           smsRegister = (TextView) findViewById(R.id.smsRegister);
+           qq = (ImageButton)findViewById(R.id.qq);
           find_password.setOnClickListener(new View.OnClickListener() {
 
               @Override
@@ -110,20 +130,39 @@ public class MainActivity extends AppCompatActivity {
 
                       }
                   }
-               //   logindata = rootModel.getToken();
-                //  url = "http://extlife.xyz/user/getuserinfo?token=";
-                //  String url2 = url + logindata;
-                 // String get = HttpConnectionUtil.getHttp().getRequset(url2,null);
 
               }
 
 
 
           });
+      qq.setOnClickListener(new View.OnClickListener() {
+          @Override
+          public void onClick(View v) {
+              if (!mTencent.isSessionValid())
+              {
+                  mTencent.login(MainActivity.this,"all", qqlistener);
+              }
+          }
+      });
 
 
       }
 
-
+      private class BaseUiListener implements IUiListener {
+        @Override
+        public void onComplete(Object response) {
+            doComplete((JSONObject) response);
+        }
+        protected void doComplete(JSONObject values) {
+            Log.i("Json",values.toString());
+        }
+        @Override
+        public void onError(UiError e) {
+        }
+        @Override
+        public void onCancel() {
+        }
+    }
 
 }

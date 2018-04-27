@@ -1,7 +1,14 @@
 package com.example.a10146.demo2;
 
+import com.squareup.okhttp.MediaType;
+import com.squareup.okhttp.OkHttpClient;
+import com.squareup.okhttp.Request;
+import com.squareup.okhttp.RequestBody;
+import com.squareup.okhttp.Response;
+
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
@@ -10,6 +17,7 @@ import java.net.URLEncoder;
 import java.util.Map;
 import java.util.concurrent.Callable;
 import java.util.concurrent.FutureTask;
+
 
 /**
  * Created by Lane on 2018/4/2.
@@ -33,7 +41,8 @@ public class HttpConnectionUtil {
                     URL requestUrl = new URL(url);
                     connection = (HttpURLConnection) requestUrl.openConnection();
                     connection.setRequestMethod("GET");
-                    if (token!=null)
+                    connection.setRequestProperty("Content-Type", "application/json");
+                    if (token != null)
                         connection.setRequestProperty("token", token);
                     connection.setConnectTimeout(8000);
                     connection.setReadTimeout(8000);
@@ -88,8 +97,8 @@ public class HttpConnectionUtil {
                     connection.setDoInput(true);
                     connection.setUseCaches(false);
                     connection.setInstanceFollowRedirects(true);
-                    connection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
-                    if (token!=null)
+                    connection.setRequestProperty("Content-Type", "application/json");
+                    if (token != null)
                         connection.setRequestProperty("token", token);
                     DataOutputStream out = new DataOutputStream(connection
                             .getOutputStream());
@@ -121,6 +130,47 @@ public class HttpConnectionUtil {
                     }
                 }
                 return sb.toString();
+            }
+        });
+        new Thread(task).start();
+        String s = null;
+        try {
+            s = task.get();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return s;
+    }
+
+    public static final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
+    public final static int CONNECT_TIMEOUT = 60;
+    public final static int READ_TIMEOUT = 100;
+    public final static int WRITE_TIMEOUT = 60;
+
+    public static final OkHttpClient client = new OkHttpClient();
+
+    // .Builder()
+//            .readTimeout(READ_TIMEOUT, TimeUnit.SECONDS)//设置读取超时时间
+//            .writeTimeout(WRITE_TIMEOUT, TimeUnit.SECONDS)//设置写的超时时间
+//            .connectTimeout(CONNECT_TIMEOUT, TimeUnit.SECONDS)//设置连接超时时间
+//            .build();
+    public String post(final String url, final String json) throws IOException {
+        FutureTask<String> task = new FutureTask<String>(new Callable<String>() {
+            @Override
+            public String call() throws Exception {
+                RequestBody body = RequestBody.create(JSON, json);
+                Request request = new Request.Builder()
+                        .url(url)
+                        .header("token", "8ee02f525de74425a424cea885fa6926")
+                        .addHeader("content-type", "application/json")
+                        .post(body)
+                        .build();
+                Response response = client.newCall(request).execute();
+                if (response.isSuccessful()) {
+                    return response.body().string();
+                } else {
+                    throw new IOException("Unexpected code " + response);
+                }
             }
         });
         new Thread(task).start();

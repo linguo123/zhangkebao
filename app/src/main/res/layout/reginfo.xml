@@ -34,7 +34,7 @@
         android:layout_width="20dp"
         android:layout_height="50dp"
         android:layout_marginLeft="0dp"
-        app:srcCompat="@drawable/smssdk_arrow_right" />
+        android:src="@drawable/forward" />
 
 </LinearLayout>
 
