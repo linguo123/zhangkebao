@@ -9,5 +9,11 @@
     <color name="co_other_words">#34bfb4</color>
     <color name="co_login_bg">#ffffff</color>
     <color name="co_eidt_bg">#ffffff</color>
-
+    <color name="tab_select_color">#2bbfff</color>
+    <color name="tab_uncelect_color">#bab5bd</color>
+    <color name="line">#E0E0E0</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="transparent">#00000000</color>
+    <color name="gray_black">#3C3C3C</color>
 </resources>

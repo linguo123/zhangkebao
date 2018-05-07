@@ -9,4 +9,7 @@
     <string name="str_input_phone_num">1输入手机号</string>
     <string name="jisntou">\u003E</string>
     <string name="Next">\u25BA</string>
+    <string name="toast_text">ScrollView下拉刷新完毕</string>
+    <string name="refresh_down_text">下拉刷新</string>
+    <string name="refresh_release_text">释放立即刷新</string>
 </resources>

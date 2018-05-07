@@ -4,12 +4,12 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/sign"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".firstpage">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -18,7 +18,6 @@
         <activity android:name=".smsRegister"></activity>
 
         <activity android:name=".perfectInfo"></activity>
-        <activity android:name=".homePage"></activity>
         <activity
             android:name="com.tencent.tauth.AuthActivity"
             android:noHistory="true"

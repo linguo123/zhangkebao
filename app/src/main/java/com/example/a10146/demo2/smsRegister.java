@@ -161,7 +161,7 @@ public class smsRegister extends AppCompatActivity implements  View.OnClickListe
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("提示"); //设置标题
         builder.setMessage("我们将要发送到" + phone + "验证"); //设置内容
-        builder.setIcon(R.mipmap.ic_launcher);//设置图标，图片id即可
+        builder.setIcon(R.mipmap.sign);//设置图标，图片id即可
         builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
             //设置确定按钮
             @Override

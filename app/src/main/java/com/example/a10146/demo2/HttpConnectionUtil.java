@@ -63,7 +63,7 @@ public class HttpConnectionUtil {
                         reader.close();
                     }
                     if (connection != null) {
-                        connection.disconnect();//断开连接，释放资源
+                        connection.disconnect();//鏂紑杩炴帴锛岄噴鏀捐祫婧�
                     }
                 }
                 return sb.toString();
@@ -90,10 +90,10 @@ public class HttpConnectionUtil {
                     URL requestUrl = new URL(url);
                     connection = (HttpURLConnection) requestUrl.openConnection();
                     connection.setRequestMethod("POST");
-                    connection.setConnectTimeout(8000);//链接超时
-                    connection.setReadTimeout(8000);//读取超时
-                    //发送post请求必须设置
-                    connection.setDoOutput(true);  //打来输出流，以便向服务器获取数据
+                    connection.setConnectTimeout(8000);//閾炬帴瓒呮椂
+                    connection.setReadTimeout(8000);//璇诲彇瓒呮椂
+                    //鍙戦�乸ost璇锋眰蹇呴』璁剧疆
+                    connection.setDoOutput(true);  //鎵撴潵杈撳嚭娴侊紝浠ヤ究鍚戞湇鍔″櫒鑾峰彇鏁版嵁
                     connection.setDoInput(true);
                     connection.setUseCaches(false);
                     connection.setInstanceFollowRedirects(true);
@@ -106,7 +106,7 @@ public class HttpConnectionUtil {
                     for (String key : map.keySet()) {
                         request.append(key + "=" + URLEncoder.encode(map.get(key), "UTF-8") + "&");
                     }
-                    out.writeBytes(request.toString());//写入请求参数
+                    out.writeBytes(request.toString());//鍐欏叆璇锋眰鍙傛暟
                     out.flush();
                     out.close();
                     if (connection.getResponseCode() == 200) {
@@ -123,10 +123,10 @@ public class HttpConnectionUtil {
                     e.printStackTrace();
                 } finally {
                     if (reader != null) {
-                        reader.close();//关闭流
+                        reader.close();//鍏抽棴娴�
                     }
                     if (connection != null) {
-                        connection.disconnect();//断开连接，释放资源
+                        connection.disconnect();//鏂紑杩炴帴锛岄噴鏀捐祫婧�
                     }
                 }
                 return sb.toString();
@@ -150,9 +150,9 @@ public class HttpConnectionUtil {
     public static final OkHttpClient client = new OkHttpClient();
 
     // .Builder()
-//            .readTimeout(READ_TIMEOUT, TimeUnit.SECONDS)//设置读取超时时间
-//            .writeTimeout(WRITE_TIMEOUT, TimeUnit.SECONDS)//设置写的超时时间
-//            .connectTimeout(CONNECT_TIMEOUT, TimeUnit.SECONDS)//设置连接超时时间
+//            .readTimeout(READ_TIMEOUT, TimeUnit.SECONDS)//璁剧疆璇诲彇瓒呮椂鏃堕棿
+//            .writeTimeout(WRITE_TIMEOUT, TimeUnit.SECONDS)//璁剧疆鍐欑殑瓒呮椂鏃堕棿
+//            .connectTimeout(CONNECT_TIMEOUT, TimeUnit.SECONDS)//璁剧疆杩炴帴瓒呮椂鏃堕棿
 //            .build();
     public String post(final String url, final String json) throws IOException {
         FutureTask<String> task = new FutureTask<String>(new Callable<String>() {

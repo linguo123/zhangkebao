@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true">
+    <include
+        android:id="@+id/main_head"
+        layout="@layout/head" />
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="fill_parent"
+        android:layout_height="0.5dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="52dp"
+        android:background="@color/line" />
+
+    <LinearLayout
+        android:id="@+id/lin_bottom"
+        android:layout_width="fill_parent"
+        android:layout_height="52dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white" >
+
+        <RelativeLayout
+            android:id="@+id/rel_homePage"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1" >
+
+            <LinearLayout
+                android:id="@+id/lin_homePage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:id="@+id/img_homePage"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:background="@drawable/ic_main_homepage_select"
+                    android:layout_gravity="center_horizontal" />
+
+                <TextView
+                    android:id="@+id/txt_homePage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="首页"
+                    android:textColor="@color/tab_select_color" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/img_homePage_red"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/lin_homePage"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/red_shape"
+                android:visibility="gone"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rel_question"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1" >
+
+            <LinearLayout
+                android:id="@+id/lin_question"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:id="@+id/img_question"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:background="@drawable/ic_main_question_unselect"
+                    android:layout_gravity="center_horizontal" />
+
+                <TextView
+                    android:id="@+id/txt_question"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="题海测试"
+                    android:textColor="@color/tab_uncelect_color" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/img_contact_red"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/lin_question"
+                android:layout_marginTop="4dp"
+                android:layout_marginLeft="-4dp"
+                android:background="@drawable/red_shape"
+                android:visibility="gone"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rel_ProfessionalTest"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1" >
+
+            <LinearLayout
+                android:id="@+id/lin_ProfessionalTest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:id="@+id/img_ProfessionalTest"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:background="@drawable/ic_main_personal_unselect"
+                    android:layout_gravity="center_horizontal"/>
+
+                <TextView
+                    android:id="@+id/txt_ProfessionalTest"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="职业评测"
+                    android:textColor="@color/tab_uncelect_color" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/img_ProfessionalTest_red"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/lin_ProfessionalTest"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/red_shape"
+                android:visibility="gone" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/rel_courseSelection"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1" >
+
+            <LinearLayout
+                android:id="@+id/lin_courseSelection"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:id="@+id/img_courseSelection"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:background="@drawable/ic_main_personal_unselect"
+                    android:layout_gravity="center_horizontal"/>
+
+                <TextView
+                    android:id="@+id/txt_courseSelection"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="选课指导"
+                    android:textColor="@color/tab_uncelect_color" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/img_dynamic_red"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/lin_courseSelection"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/red_shape"
+                android:visibility="gone" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/mainFragment"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/line"
+        />
+
+</RelativeLayout>

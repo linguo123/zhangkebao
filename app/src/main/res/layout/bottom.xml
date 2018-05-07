@@ -4,7 +4,7 @@
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="65dp"
-    android:background="@drawable/bottom_bar"
+    android:background="@drawable/bottom_bar9"
       >
     <LinearLayout
         android:id="@+id/id_tab_homepage"
