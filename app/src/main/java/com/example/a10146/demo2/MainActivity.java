@@ -2,27 +2,19 @@ package com.example.a10146.demo2;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bigkoo.pickerview.OptionsPickerView;
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 import com.tencent.tauth.IUiListener;
 import com.tencent.tauth.Tencent;
 import com.tencent.tauth.UiError;
 
 import org.json.JSONObject;
-
-import java.util.HashMap;
-import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView find_password;
     private TextView registerbtn;
     private  TextView smsRegister;
-    private Button login_btn;
+    private TextView login_btn;
     private static final String TAG = "MainActivity";
     Tencent mTencent;
     BaseUiListener qqlistener = new BaseUiListener();
@@ -63,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
           find_password = (TextView) findViewById(R.id.find_password);
           edit_username = (EditText) findViewById(R.id.edit_username);
           edit_password = (EditText) findViewById(R.id.edit_password);
-          login_btn = (Button) findViewById(R.id.login_btn);
+          login_btn = (TextView) findViewById(R.id.login_btn);
           smsRegister = (TextView) findViewById(R.id.smsRegister);
            qq = (ImageButton)findViewById(R.id.qq);
           find_password.setOnClickListener(new View.OnClickListener() {
@@ -88,7 +80,10 @@ public class MainActivity extends AppCompatActivity {
           login_btn.setOnClickListener(new View.OnClickListener() {
 
               public void onClick(View v) {
-                  String userinfodata;
+                  Intent intent = new Intent(MainActivity.this, HomePage.class);
+                  startActivity(intent);
+
+               /*   String userinfodata;
                   String username = edit_username.getText().toString();
                   String password = edit_password.getText().toString();
                   Map<String, String> postmap = new HashMap<String, String>();
@@ -97,7 +92,6 @@ public class MainActivity extends AppCompatActivity {
                   postmap.put("password", password);
                   String posturl = "http://extlife.xyz/user/login";
                   String posthttp = HttpConnectionUtil.getHttp().postRequset(posturl, postmap,null);
-
                   JsonContainer<String> rootModel = new JsonContainer<String>();
                   Gson gson = new Gson();
                   rootModel = gson.fromJson(posthttp, new TypeToken<JsonContainer<String>>() {
@@ -130,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
 
                       }
                   }
-
+   */
               }
 
 

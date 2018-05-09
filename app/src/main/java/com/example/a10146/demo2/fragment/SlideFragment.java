@@ -86,15 +86,7 @@ public class SlideFragment extends Fragment implements OnClickListener {
 	private void initView(View view) {
 		lst_slide = (XXListView) view.findViewById(R.id.lst_slide);
 
-//		rel_night = (RelativeLayout) view.findViewById(R.id.lin_night);
-//		rel_night.setOnClickListener(this);
 
-//		lin_slide_wendu_location = (LinearLayout) view
-//				.findViewById(R.id.lin_slide_wendu_location);
-//		lin_slide_wendu_location.setOnClickListener(this);
-//
-//		rel_slide_set = (RelativeLayout) view.findViewById(R.id.rel_slide_set);
-//		rel_slide_set.setOnClickListener(this);
 	}
 
 	@Override

@@ -6,9 +6,7 @@
     android:background="#fff"
     android:clipToPadding="true"
     android:fitsSystemWindows="true">
-    <include
-        android:id="@+id/main_head"
-        layout="@layout/head" />
+
 
     <View
         android:id="@+id/line"
@@ -184,5 +182,7 @@
         android:layout_height="fill_parent"
         android:layout_above="@+id/line"
         />
-
+    <include
+        android:id="@+id/main_head"
+        layout="@layout/head" />
 </RelativeLayout>

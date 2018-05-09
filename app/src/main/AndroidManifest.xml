@@ -9,15 +9,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".firstpage">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity android:name=".smsRegister"></activity>
-
+        <activity android:name=".HomePage"></activity>
         <activity android:name=".perfectInfo"></activity>
+        <activity android:name=".SildeItem.GoToCollegeActivity"></activity>
+        <activity android:name=".SildeItem.MyRoleActivity"></activity>
+        <activity android:name=".SildeItem.FoldLineDiaActivity"></activity>
+        <activity android:name=".SildeItem.TestReportActivity"></activity>
+        <activity android:name=".SildeItem.VIPActivity"></activity>
+        <activity android:name=".SildeItem.WroColleActivity"></activity>
+
         <activity
             android:name="com.tencent.tauth.AuthActivity"
             android:noHistory="true"
