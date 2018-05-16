@@ -1,4 +1,4 @@
-package com.example.a10146.demo2;
+package com.example.a10146.demo2.Activity;
 
 /**
  * Created by 10146 on 2018/4/9.
@@ -17,6 +17,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.a10146.demo2.HttpConnectionUtil;
+import com.example.a10146.demo2.JsonContainer;
+import com.example.a10146.demo2.R;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 

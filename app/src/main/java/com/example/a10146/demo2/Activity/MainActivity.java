@@ -1,4 +1,4 @@
-package com.example.a10146.demo2;
+package com.example.a10146.demo2.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +10,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.bigkoo.pickerview.OptionsPickerView;
+import com.example.a10146.demo2.R;
 import com.tencent.tauth.IUiListener;
 import com.tencent.tauth.Tencent;
 import com.tencent.tauth.UiError;
@@ -71,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
           smsRegister.setOnClickListener(new View.OnClickListener() {
 
               public void onClick(View v) {
-                  Intent intent = new Intent(MainActivity.this, smsRegister.class);
+                  Intent intent = new Intent(MainActivity.this, com.example.a10146.demo2.Activity.smsRegister.class);
                   startActivity(intent);
 
               }

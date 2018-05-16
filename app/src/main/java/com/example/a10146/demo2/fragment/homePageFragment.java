@@ -32,6 +32,7 @@ RefreshListener{
 		// TODO Auto-generated method stub
 		View view= LayoutInflater.from(getActivity()).inflate(R.layout.fragment_homepage, null);
 		initView(view);
+
 		return view;
 	}
 

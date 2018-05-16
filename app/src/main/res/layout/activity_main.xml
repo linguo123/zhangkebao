@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/background"
     android:orientation="vertical"
-    tools:context=".MainActivity"
+    tools:context=".Activity.MainActivity"
     android:weightSum="1">
     
 
@@ -81,7 +81,7 @@
             android:text="手机注册"
             android:textColor="#0097ff"
             android:textSize="15sp" />
-        
+
 
     </RelativeLayout>
 

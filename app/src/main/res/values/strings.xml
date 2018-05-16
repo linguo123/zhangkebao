@@ -12,4 +12,6 @@
     <string name="toast_text">ScrollView下拉刷新完毕</string>
     <string name="refresh_down_text">下拉刷新</string>
     <string name="refresh_release_text">释放立即刷新</string>
+    <string name="xiaohaijun">(｡･∀･)ﾉﾞ嗨，我是Ablility你的能力测试官</string>
+    <string name="tellcontent">以后，我会带你找到自己的定位，发现生活的困惑的原因并找到解决方法，找到适合自己性格、兴趣的专业，明确自己的方向</string>
 </resources>

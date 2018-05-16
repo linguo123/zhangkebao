@@ -3,10 +3,7 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/app/libs/slidingmenu.jar" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/slidingmenu.jar" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/a10146/demo2/BaseActivity.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/a10146/demo2/HomePage.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/a10146/demo2/HttpConnectionUtil.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/a10146/demo2/HttpConnectionUtil.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/a10146/demo2/Activity/BaseActivity.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/a10146/demo2/HttpConnectionUtil.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/a10146/demo2/SildeItem/FoldLineDiaActivity.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/a10146/demo2/SildeItem/GoToCollegeActivity.java" charset="GBK" />
@@ -20,7 +17,7 @@
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/a10146/demo2/bean/ProvinceBean.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/a10146/demo2/fragment/SlideFragment.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/a10146/demo2/fragment/homePageFragment.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/a10146/demo2/fragment/professionalFragment.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/a10146/demo2/fragment/professionalFragment.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/a10146/demo2/fragment/questionFragment.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/a10146/demo2/system/SystemBarTintManager.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/a10146/demo2/utils/Autjcode.java" charset="UTF-8" />

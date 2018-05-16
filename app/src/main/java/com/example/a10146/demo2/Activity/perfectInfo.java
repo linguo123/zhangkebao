@@ -1,4 +1,4 @@
-package com.example.a10146.demo2;
+package com.example.a10146.demo2.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +10,10 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 
 import com.bigkoo.pickerview.OptionsPickerView;
+import com.example.a10146.demo2.HttpConnectionUtil;
+import com.example.a10146.demo2.JsonWarp;
+import com.example.a10146.demo2.LoadCityUtil;
+import com.example.a10146.demo2.R;
 
 import java.io.IOException;
 

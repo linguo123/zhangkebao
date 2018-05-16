@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="titles">
+        <item>霍兰德兴趣检测</item>
+        <item>职业性格测评</item>
+        <item>能力测评</item>
+        <item>职业测评</item>
+        <item>职业性格测评</item>
+        <item>能力测评</item>
+    </string-array>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</resources>

@@ -4,4 +4,12 @@
         <attr name="border_width" format="dimension" />
         <attr name="border_color" format="color" />
     </declare-styleable>
+    <declare-styleable name="scene">
+        <attr name="leftMargin" format="dimension" />
+        <attr name="leftDistance" format="dimension" />
+        <attr name="rightDistance" format="dimension" />
+        <attr name="verticalDistance" format="dimension" />
+        <attr name="textSize" format="float" />
+        <attr name="textColor" format="color" />
+    </declare-styleable>
 </resources>
