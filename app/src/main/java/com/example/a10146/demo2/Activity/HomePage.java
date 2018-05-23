@@ -226,6 +226,8 @@ public class HomePage extends BaseActivity implements OnClickListener {
 
                 img_head_right.setVisibility(View.VISIBLE);
                 img_head_right.setBackgroundResource(R.mipmap.sign);
+
+
                 break;
             case FragmentUtil.TabIndex.TAB_QuestionTest:
                 txt_HomePage.setTextColor(tabNormalColor);
@@ -279,6 +281,7 @@ public class HomePage extends BaseActivity implements OnClickListener {
                 replace(R.id.mainFragment,
                         fragmentArry.get(FragmentUtil.TabIndex.TAB_HomePage),
                         FragmentUtil.TabIndex.TAB_HomePage);
+
                 break;
             case R.id.rel_question:// 切换到题海测试的fragment
                 replace(R.id.mainFragment,

@@ -6,7 +6,7 @@
         android:allowBackup="true"
         android:icon="@mipmap/sign"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_auncher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Activity.MainActivity">
@@ -24,6 +24,8 @@
         <activity android:name=".SildeItem.TestReportActivity"></activity>
         <activity android:name=".SildeItem.VIPActivity"></activity>
         <activity android:name=".SildeItem.WroColleActivity"></activity>
+
+
 
         <activity
             android:name="com.tencent.tauth.AuthActivity"

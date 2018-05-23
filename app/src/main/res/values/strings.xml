@@ -14,4 +14,39 @@
     <string name="refresh_release_text">释放立即刷新</string>
     <string name="xiaohaijun">(｡･∀･)ﾉﾞ嗨，我是Ablility你的能力测试官</string>
     <string name="tellcontent">以后，我会带你找到自己的定位，发现生活的困惑的原因并找到解决方法，找到适合自己性格、兴趣的专业，明确自己的方向</string>
+
+
+
+    <string name="hello_world">Hello world!</string>
+
+    <string name="action_settings">Settings</string>
+
+
+
+    <string name="news_one_title">霍兰德兴趣测试</string>
+
+    <string name="news_one_desc">务实的带头大哥你喜欢竞争、敢冒风险、为人务实，具有领导才能为。
+        习惯以利益得失，权利、地位、金钱等来衡量做事的价值，
+        做事有较强的目的性。同时，你动手能力强，做事手脚灵活，动作协调。偏好于具体任务，</string>
+
+
+
+    <string name="news_two_title">职业性格测试</string>
+
+    <string name="news_two_desc">细致谨慎的检查员
+        沉静、认真、讲求实际，能够合情合理地去决定应做的事情，能以持久的精力工作，做事有次序、有条理。
+        在工作上和家庭生活上，重视传统和忠诚，具有强烈的责任心。</string>
+
+    <string name="news_three_title">能力测试</string>
+
+    <string name="news_three_desc">这种典型行为风格,可被大致描述为是"建议者"的类型.这种类型的人
+        通常善于关怀,同情和理解他们身边的人.他们在大多数社会情境里总能找到平衡.他们是很好的倾听者,
+        极富人情味的朋友.他们也是天生的团队参与者,在平和的环境里表现通常出色.建议者一般不会将自己的
+        想法强加于人,面对冲突通常回避妥协.他们通常需要获得关注与称赞.</string>
+
+    <string name="news_four_title">Sweden royal wedding</string>
+
+    <string name="news_four_desc">sadadadavdcsdvsdc</string>
+
+
 </resources>

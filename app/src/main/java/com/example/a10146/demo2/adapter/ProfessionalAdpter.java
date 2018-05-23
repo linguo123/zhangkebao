@@ -16,10 +16,6 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 //自己写的adapter当中有问题还没找出来
 public class ProfessionalAdpter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
-//    public ProfessionalAdpter(LayoutInflater mLayoutInflater, Context mContext) {
-//        this.mLayoutInflater = mLayoutInflater;
-//        this.mContext = mContext;
-//    }vv
 
     private final LayoutInflater mLayoutInflater;
     private final Context mContext;
@@ -69,6 +65,8 @@ public class ProfessionalAdpter extends RecyclerView.Adapter<RecyclerView.ViewHo
         }
     }
 }
+
+
 
 
 

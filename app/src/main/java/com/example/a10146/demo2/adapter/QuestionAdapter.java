@@ -13,7 +13,7 @@ import com.example.a10146.demo2.R;
 import java.util.List;
 import java.util.Map;
 
-public class QuestionAdapter extends BaseAdapter {
+public class  QuestionAdapter extends BaseAdapter {
 
 	private Context context;
 	private List<Map<String, Object>> list;
