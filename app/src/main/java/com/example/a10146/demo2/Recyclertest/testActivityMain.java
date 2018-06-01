@@ -10,7 +10,6 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.example.a10146.demo2.R;
-import com.example.a10146.demo2.adapter.demotestadapter;
 import com.example.a10146.demo2.professionalTest;
 
 import java.util.ArrayList;
@@ -32,6 +31,7 @@ public class testActivityMain extends AppCompatActivity {
         setContentView(R.layout.activity_test_main);
 
         LinearLayoutManager layoutManager=new LinearLayoutManager(this);
+        layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
 
         recyclerView= (RecyclerView) findViewById(R.id.profssion_recyclerView);
 

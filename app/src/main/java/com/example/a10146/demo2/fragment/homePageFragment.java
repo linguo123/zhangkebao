@@ -1,5 +1,6 @@
 package com.example.a10146.demo2.fragment;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -10,13 +11,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.example.a10146.demo2.MPAndroidChart.BarChartManager;
 import com.example.a10146.demo2.Progress.ProgressView;
 import com.example.a10146.demo2.R;
 import com.example.a10146.demo2.view.RefreshableView;
 import com.example.a10146.demo2.view.RefreshableView.RefreshListener;
+import com.github.mikephil.charting.charts.BarChart;
 
-public class homePageFragment extends Fragment implements
-RefreshListener{
+import java.util.ArrayList;
+import java.util.List;
+
+public class homePageFragment extends Fragment implements RefreshListener{
 
 	private static final int PROGRESS=0X56;
 	private static final int PROGRESS2=0X57;
@@ -27,21 +32,16 @@ RefreshListener{
 
 	private int mProgress;
 	private int mProgress2;
-	private int mProgress3;
+
 
 	private  int  progressurl = 60;
 	private  int  progressurl2 = 50;
 
 
-
 	private RefreshableView mRefreshableView;
-	Handler handler = new Handler() {
-		public void handleMessage(Message message) {
-			super.handleMessage(message);
-			mRefreshableView.finishRefresh();
-			Toast.makeText(getActivity(), R.string.toast_text, Toast.LENGTH_SHORT).show();
-		};
-	};
+
+
+
 
 
 
@@ -63,6 +63,43 @@ RefreshListener{
 		mMyArcProgress=(ProgressView) view.findViewById(R.id.arc_progress1);
 		mMyArcProgress2=(ProgressView) view.findViewById(R.id.arc_progress2);
 
+		BarChart barChart1 = (BarChart) view.findViewById(R.id.bar_chart1);
+		BarChartManager barChartManager1 = new BarChartManager(barChart1);
+
+		ArrayList<Float> xValues = new ArrayList<>();
+		for (int i = 0; i <= 10; i++) {
+			xValues.add((float) i);
+		}
+
+
+		List<List<Float>> yValues = new ArrayList<>();
+		for (int i = 0; i < 4; i++) {
+			List<Float> yValue = new ArrayList<>();
+			for (int j = 0; j <= 10; j++) {
+				yValue.add((float) (Math.random() * 80));
+			}
+			yValues.add(yValue);
+		}
+
+
+		List<Integer> colours = new ArrayList<>();
+		colours.add(Color.GREEN);
+		colours.add(Color.BLUE);
+		colours.add(Color.RED);
+		colours.add(Color.CYAN);
+
+
+		List<String> names = new ArrayList<>();
+		names.add("�ۺϳɼ�");
+
+		barChartManager1.showBarChart(xValues, yValues.get(0), names.get(0), colours.get(3));
+
+
+
+
+
+
+
 		//  mButton=(Button) findViewById(R.id.button_start);
 		//   mButton.setOnClickListener(this);
 
@@ -70,7 +107,8 @@ RefreshListener{
 	}
 	private void initData() {
 		mRefreshableView.setRefreshListener(this);
-		
+
+
 	}
 
 	@Override
@@ -117,4 +155,11 @@ RefreshListener{
 		};
 	};
 
+	Handler handler = new Handler() {
+		public void handleMessage(Message message) {
+			super.handleMessage(message);
+			mRefreshableView.finishRefresh();
+			Toast.makeText(getActivity(), R.string.toast_text, Toast.LENGTH_SHORT).show();
+		};
+	};
 }

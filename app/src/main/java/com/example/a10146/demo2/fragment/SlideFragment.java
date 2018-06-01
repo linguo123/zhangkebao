@@ -10,10 +10,8 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
-import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.RelativeLayout;
 
 import com.example.a10146.demo2.R;
 import com.example.a10146.demo2.SildeItem.FoldLineDiaActivity;
@@ -33,9 +31,6 @@ import java.util.Map;
 public class SlideFragment extends Fragment implements OnClickListener {
 
 	private XXListView lst_slide;
-	private RelativeLayout rel_night;
-	private LinearLayout lin_slide_wendu_location;
-	private RelativeLayout rel_slide_set;
 
 	@Override
 	@Nullable
@@ -53,33 +48,33 @@ public class SlideFragment extends Fragment implements OnClickListener {
                                     int position, long id) {
 				// TODO Auto-generated method stub
 				switch (position) {
-				case 0:
-					startActivity(new Intent().setClass(getActivity(),
-							MyRoleActivity.class));
-					break;
-				case 1:
-					startActivity(new Intent().setClass(getActivity(),
-							TestReportActivity.class));
-					break;
-				case 2:
-					startActivity(new Intent().setClass(getActivity(),
-							WroColleActivity.class));
-					break;
-				case 3:
-					startActivity(new Intent().setClass(getActivity(),
-							FoldLineDiaActivity.class));
-					break;
-				case 4:
-					startActivity(new Intent().setClass(getActivity(),
-							VIPActivity.class));
-					break;
-				case 5:
-					startActivity(new Intent().setClass(getActivity(),
-							GoToCollegeActivity.class));
-					break;
-				}
-			}
-		});
+			case 0:
+				startActivity(new Intent().setClass(getActivity(),
+						MyRoleActivity.class));
+				break;
+			case 1:
+				startActivity(new Intent().setClass(getActivity(),
+						TestReportActivity.class));
+				break;
+			case 2:
+				startActivity(new Intent().setClass(getActivity(),
+						WroColleActivity.class));
+				break;
+			case 3:
+				startActivity(new Intent().setClass(getActivity(),
+						FoldLineDiaActivity.class));
+				break;
+			case 4:
+				startActivity(new Intent().setClass(getActivity(),
+						VIPActivity.class));
+				break;
+			case 5:
+				startActivity(new Intent().setClass(getActivity(),
+						GoToCollegeActivity.class));
+				break;
+		}
+	}
+});
 		return view;
 	}
 

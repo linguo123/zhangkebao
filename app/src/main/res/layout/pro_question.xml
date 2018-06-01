@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="450dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:background="#ffff"
+                android:text=""
+                android:textColor="@color/colorAccent"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <RadioGroup
+                android:id="@+id/mRadioGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+
+                <!--四个选项-->
+
+                <RadioButton
+                    android:id="@+id/RadioA"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="" />
+
+                <RadioButton
+                    android:id="@+id/RadioB"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=" " />
+
+                <RadioButton
+                    android:id="@+id/RadioC"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="" />
+
+                <RadioButton
+                    android:id="@+id/RadioD"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="" />
+
+                <!--正确答案，默认是隐藏的-->
+
+                <TextView
+                    android:id="@+id/tv_result"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text=""
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="18sp"
+                    android:visibility="invisible" />
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+    <!--切换题目-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="horizontal"
+        android:layout_gravity="center">
+
+
+        <Button
+            android:id="@+id/btn_up"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="120dp"
+            android:background="@drawable/shape"
+            android:text="上一题"
+            />
+
+
+        <Button
+            android:id="@+id/btn_down"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+
+            android:background="@drawable/shape"
+            android:text="下一题" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

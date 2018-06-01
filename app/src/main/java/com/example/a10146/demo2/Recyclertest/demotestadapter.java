@@ -1,4 +1,4 @@
-package com.example.a10146.demo2.adapter;
+package com.example.a10146.demo2.Recyclertest;
 
 import android.content.Context;
 import android.content.Intent;
@@ -8,11 +8,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.a10146.demo2.Activity.smsRegister;
+import com.example.a10146.demo2.ProQuestion.ProQueActivity;
 import com.example.a10146.demo2.R;
 import com.example.a10146.demo2.professionalTest;
 
@@ -43,8 +42,8 @@ public class demotestadapter extends RecyclerView.Adapter<demotestadapter.TestVi
             ImageView test_photo;
             TextView test_title;
             TextView test_desc;
-            Button share;
-            Button readMore;
+         //   Button share;
+       //     Button readMore;
 
             public TestViewHolder(final View itemView) {
                 super(itemView);
@@ -52,8 +51,8 @@ public class demotestadapter extends RecyclerView.Adapter<demotestadapter.TestVi
                 test_photo= (ImageView) itemView.findViewById(R.id.news_photo);
                 test_title= (TextView) itemView.findViewById(R.id.news_title);
                 test_desc= (TextView) itemView.findViewById(R.id.news_desc);
-                share= (Button) itemView.findViewById(R.id.btn_share);
-                readMore= (Button) itemView.findViewById(R.id.btn_more);
+              //  share= (Button) itemView.findViewById(R.id.btn_share);
+              //  readMore= (Button) itemView.findViewById(R.id.btn_more);
                 //设置TextView背景为半透明
                 test_title.setBackgroundColor(Color.argb(20, 0, 0, 0));
 
@@ -77,15 +76,16 @@ public class demotestadapter extends RecyclerView.Adapter<demotestadapter.TestVi
             personViewHolder.test_desc.setText(proTest.get(i).getDesc());
 
             //为btn_share btn_readMore cardView设置点击事件
-            personViewHolder.cardView.setOnClickListener(new View.OnClickListener() {
+            personViewHolder.cardView.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v) {
-                    Intent intent=new Intent(context,smsRegister.class);
-                    intent.putExtra("News",proTest.get(j));
+
+                    Intent intent=new Intent(context,ProQueActivity.class);
+                    intent.putExtra("question","0"+proTest.get(j));
                     context.startActivity(intent);
                 }
             });
-
+/**
             personViewHolder.share.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -101,11 +101,11 @@ public class demotestadapter extends RecyclerView.Adapter<demotestadapter.TestVi
             personViewHolder.readMore.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent=new Intent(context,smsRegister.class);
+                    Intent intent=new Intent(context,ProQueActivity.class);
                     intent.putExtra("News",proTest.get(j));
                     context.startActivity(intent);
                 }
-            });
+            });*/
 
 
         }

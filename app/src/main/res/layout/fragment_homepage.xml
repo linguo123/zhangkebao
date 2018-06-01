@@ -2,10 +2,37 @@
 <com.example.a10146.demo2.view.RefreshableView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" 
+    android:orientation="vertical"
+    android:background="#F8F8FF"
     android:id="@+id/refresh_homepage">
     <include
         layout="@layout/progressview"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        ></include>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp">
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="45dp"
+
+        android:text="学历值"/>
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="45dp"
+
+            android:text="学历值"/>
+</LinearLayout>
+
+    <include
+        layout="@layout/activity_barchart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+
 
         ></include>
 <ScrollView

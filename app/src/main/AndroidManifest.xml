@@ -24,6 +24,8 @@
         <activity android:name=".SildeItem.TestReportActivity"></activity>
         <activity android:name=".SildeItem.VIPActivity"></activity>
         <activity android:name=".SildeItem.WroColleActivity"></activity>
+        <activity android:name=".ProQuestion.ProQueActivity"></activity>
+        <activity android:name=".TesQuestion.TestQueActivity"></activity>
 
 
 

@@ -16,7 +16,7 @@
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/a10146/demo2/adapter/SlideMenuAdapter.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/a10146/demo2/bean/ProvinceBean.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/a10146/demo2/fragment/SlideFragment.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/a10146/demo2/fragment/homePageFragment.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/a10146/demo2/fragment/homePageFragment.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/a10146/demo2/fragment/professionalFragment.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/a10146/demo2/fragment/questionFragment.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/a10146/demo2/system/SystemBarTintManager.java" charset="UTF-8" />

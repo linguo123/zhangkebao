@@ -123,7 +123,9 @@ public class HomePage extends BaseActivity implements OnClickListener {
         mSlidingMenu.setMode(SlidingMenu.LEFT);
         // 设置左边的
         mSlidingMenu.setMenu(R.layout.left_slide);
-        mSlidingMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);// 设置触摸的模式
+
+        mSlidingMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_NONE);
+       // mSlidingMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);// 设置触摸的模式
         // 添加左边的菜单
         FragmentTransaction frans = getSupportFragmentManager()
                 .beginTransaction();

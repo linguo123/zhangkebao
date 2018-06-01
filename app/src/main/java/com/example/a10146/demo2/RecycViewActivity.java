@@ -5,7 +5,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 
-import com.example.a10146.demo2.adapter.demotestadapter;
+import com.example.a10146.demo2.Recyclertest.demotestadapter;
 
 import java.util.ArrayList;
 import java.util.List;

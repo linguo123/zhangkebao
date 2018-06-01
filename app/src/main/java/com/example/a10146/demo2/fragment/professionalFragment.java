@@ -11,21 +11,20 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 import com.example.a10146.demo2.R;
+import com.example.a10146.demo2.Recyclertest.demotestadapter;
 import com.example.a10146.demo2.adapter.ProfessionalAdpter;
-import com.example.a10146.demo2.adapter.demotestadapter;
 import com.example.a10146.demo2.professionalTest;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class professionalFragment extends Fragment {
     ProfessionalAdpter madapter;
 //    @BindView(R.id.professionalbtn)
 //    Button professionalBtn;
-    @BindView(R.id.Tips)
+   // @BindView(R.id.Tips)
     LinearLayout  tipscontent;
     RecyclerView recyclerView;
 
@@ -40,7 +39,7 @@ public class professionalFragment extends Fragment {
           View view = LayoutInflater.from(getActivity()).inflate(R.layout.fragment_profession, null);
             ButterKnife.bind(getActivity(), view);
         LinearLayoutManager layoutManager=new LinearLayoutManager(getActivity());
-
+       // layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
         recyclerView= (RecyclerView) view.findViewById(R.id.profssion_recyclerView);
 
         initPersonData();
@@ -92,7 +91,8 @@ public class professionalFragment extends Fragment {
         newsList.add(new professionalTest(getString(R.string.news_three_title),
                 getString(R.string.news_three_desc),R.mipmap.news_three));
 
-        newsList.add(new professionalTest(getString(R.string.news_four_title),getString(R.string.news_four_desc),R.mipmap.news_four));
+        newsList.add(new professionalTest(getString(R.string.news_four_title),
+                getString(R.string.news_four_desc),R.mipmap.news_four));
     }
 
 }

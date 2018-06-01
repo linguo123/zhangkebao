@@ -1,16 +1,19 @@
 
 package com.example.a10146.demo2.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 
 import com.example.a10146.demo2.R;
+import com.example.a10146.demo2.TesQuestion.TestQueActivity;
 import com.example.a10146.demo2.adapter.QuestionAdapter;
 
 import java.util.ArrayList;
@@ -32,6 +35,52 @@ public class questionFragment extends Fragment{
 		setListViewHeightBasedOnChildren(lst_one);
 		lst_two.setAdapter(new QuestionAdapter(getActivity(), getTwoData()));
 		setListViewHeightBasedOnChildren(lst_two);
+		lst_one.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+
+			@Override
+			public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+				// TODO Auto-generated method stub
+				switch (position) {
+					case 0:
+						Intent intent = new Intent();
+						intent.putExtra("question", 00);
+						intent.setClass(getActivity(), TestQueActivity.class);
+						questionFragment.this.startActivity(intent);
+//						startActivity(new Intent().setClass(getActivity(),
+//								MyRoleActivity.class));
+						break;
+					case 1:
+						Intent intent1 = new Intent();
+						intent1.putExtra("question", 01);
+						intent1.setClass(getActivity(), TestQueActivity.class);
+						questionFragment.this.startActivity(intent1);
+						break;
+					case 2:
+						Intent intent2 = new Intent();
+						intent2.putExtra("question", 02);
+						intent2.setClass(getActivity(), TestQueActivity.class);
+						questionFragment.this.startActivity(intent2);
+						break;
+					case 3:
+						Intent intent3 = new Intent();
+						intent3.putExtra("question", 03);
+						intent3.setClass(getActivity(), TestQueActivity.class);
+						questionFragment.this.startActivity(intent3);
+						break;
+//					case 4:
+//						startActivity(new Intent().setClass(getActivity(),
+//								VIPActivity.class));
+//						break;
+//					case 5:
+//						startActivity(new Intent().setClass(getActivity(),
+//								GoToCollegeActivity.class));
+//						break;
+				}
+
+
+			}
+		});
 		return view;
 	}
 	
@@ -44,50 +93,55 @@ public class questionFragment extends Fragment{
 			List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
 			Map<String, Object> map = new HashMap<String, Object>();
 			map.put("icon", R.drawable.ic_dynamic_game);
-			map.put("title", "游戏");
+			map.put("title", "语文");
 			map.put("right", R.drawable.ic_next);
 			list.add(map);
 
 			map = new HashMap<String, Object>();
 			map.put("icon", R.drawable.ic_dynamic_shopping);
-			map.put("title", "购物");
+			map.put("title", "数学");
 			map.put("right", R.drawable.ic_next);
 			list.add(map);
 
 			map = new HashMap<String, Object>();
 			map.put("icon", R.drawable.ic_dynamic_read);
-			map.put("title", "阅读");
+			map.put("title", "英语");
 			map.put("right", R.drawable.ic_next);
 			list.add(map);
 
-			map = new HashMap<String, Object>();
-			map.put("icon", R.drawable.ic_dynamic_music);
-			map.put("title", "音乐");
-			map.put("right", R.drawable.ic_next);
-			list.add(map);
+
 
 			return list;
 		}
 
 
 				public List<Map<String, Object>> getTwoData() {
+
+
+
 					List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
+
 					Map<String, Object> map = new HashMap<String, Object>();
 					map.put("icon", R.drawable.ic_dynamic_group);
-					map.put("title", "附近的群");
+					map.put("title", "物理");
 					map.put("right", R.drawable.ic_next);
 					list.add(map);
 
+					map = new HashMap<String, Object>();
+					map.put("icon", R.drawable.ic_dynamic_music);
+					map.put("title", "化学");
+					map.put("right", R.drawable.ic_next);
+					list.add(map);
 
 					map = new HashMap<String, Object>();
 					map.put("icon", R.drawable.ic_dynamic_health);
-					map.put("title", "健康");
+					map.put("title", "生物");
 					map.put("right", R.drawable.ic_next);
 					list.add(map);
 
 					map = new HashMap<String, Object>();
 					map.put("icon", R.drawable.ic_dynamic_school);
-					map.put("title", "OO课堂");
+					map.put("title", "地理");
 					map.put("right", R.drawable.ic_next);
 					list.add(map);
 

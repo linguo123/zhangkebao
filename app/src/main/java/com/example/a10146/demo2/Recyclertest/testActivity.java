@@ -23,9 +23,9 @@ import com.example.a10146.demo2.professionalTest;
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_test);
 
-            testPhoto= (ImageView) findViewById(R.id.news_info_photo);
-            testTitle= (TextView) findViewById(R.id.news_info_title);
-            testDesc= (TextView) findViewById(R.id.news_info_desc);
+            testPhoto= (ImageView) findViewById(R.id.news_photo);
+            testTitle= (TextView) findViewById(R.id.news_title);
+            testDesc= (TextView) findViewById(R.id.news_desc);
 
             Intent intent=getIntent();
 
