@@ -13,9 +13,7 @@ public class professionalTest implements Serializable {
     private String desc;
     private int photoId;
 
-    /**
-     * Constructs a new instance of {@code Object}.
-     */
+
     public professionalTest(String name, String age, int photoId) {
         this.title=name;
         this.desc=age;

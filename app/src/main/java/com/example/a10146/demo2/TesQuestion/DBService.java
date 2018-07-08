@@ -10,11 +10,14 @@ import java.util.List;
  * Created by LGC on 2018/5/25.
  */
 public class DBService {
-
+    private   final String tag="20180707";
     private SQLiteDatabase db;
+
+
 
     //构造方法
     public DBService(int type) {
+
         //连接数据库
         String Datapath =String.format( "/data/data/com.example.a10146.demo2/databases/question%02d.db",type) ;
         db = SQLiteDatabase.openDatabase(Datapath, null, SQLiteDatabase.OPEN_READWRITE);
@@ -53,5 +56,7 @@ public class DBService {
         return list;
 
     }
+
+
 
 }

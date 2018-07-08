@@ -1,7 +1,6 @@
 package com.example.a10146.demo2.Recyclertest;
 
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
@@ -11,7 +10,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.a10146.demo2.ProQuestion.ProQueActivity;
 import com.example.a10146.demo2.R;
 import com.example.a10146.demo2.professionalTest;
 
@@ -26,8 +24,9 @@ public class demotestadapter extends RecyclerView.Adapter<demotestadapter.TestVi
 
         private List<professionalTest> proTest;
         private Context context;
+        private OnItemClickListener mOnItemClickListener;
 
-        public demotestadapter(List<professionalTest> proTest,Context context) {
+    public demotestadapter(List<professionalTest> proTest,Context context) {
             this.proTest = proTest;
             this.context=context;
         }
@@ -68,21 +67,23 @@ public class demotestadapter extends RecyclerView.Adapter<demotestadapter.TestVi
         }
 
         @Override
-        public void onBindViewHolder(demotestadapter.TestViewHolder personViewHolder, int i) {
-            final int j=i;
+        public void onBindViewHolder(demotestadapter.TestViewHolder personViewHolder, final int position) {
+            final int j=position;
 
-            personViewHolder.test_photo.setImageResource(proTest.get(i).getPhotoId());
-            personViewHolder.test_title.setText(proTest.get(i).getTitle());
-            personViewHolder.test_desc.setText(proTest.get(i).getDesc());
+            personViewHolder.test_photo.setImageResource(proTest.get(position).getPhotoId());
+            personViewHolder.test_title.setText(proTest.get(position).getTitle());
+            personViewHolder.test_desc.setText(proTest.get(position).getDesc());
 
             //为btn_share btn_readMore cardView设置点击事件
             personViewHolder.cardView.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v) {
-
-                    Intent intent=new Intent(context,ProQueActivity.class);
-                    intent.putExtra("question","0"+proTest.get(j));
-                    context.startActivity(intent);
+                    mOnItemClickListener.onClick(position);
+//                    Log.d("view", String.valueOf(v));
+//                    Intent intent=new Intent(context,ProQueActivity.class);
+//                    intent.putExtra("question","0"+proTest.get(j));
+//                    Log.e("question", String.valueOf(intent.putExtra("question","0"+proTest.get(j))));
+//                    context.startActivity(intent);
                 }
             });
 /**
@@ -110,6 +111,13 @@ public class demotestadapter extends RecyclerView.Adapter<demotestadapter.TestVi
 
         }
 
+    public interface OnItemClickListener{
+        void onClick( int position);
+
+    }
+    public void setOnItemClickListener(OnItemClickListener onItemClickListener ){
+        this. mOnItemClickListener=onItemClickListener;
+    }
         @Override
         public int getItemCount() {
             return proTest.size();

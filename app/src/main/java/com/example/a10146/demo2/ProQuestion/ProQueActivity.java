@@ -124,6 +124,7 @@ public class ProQueActivity extends AppCompatActivity {
                     tv_title.setText(q.question);
 
                     mRadioButton[0].setText(q.answerA);
+
                     mRadioButton[1].setText(q.answerB);
                     mRadioButton[2].setText(q.answerC);
                     mRadioButton[3].setText(q.answerD);

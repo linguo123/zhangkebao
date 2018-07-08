@@ -57,7 +57,6 @@ public class TestQueActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pro_question);
-
         Intent intent = getIntent();
         int nomber = intent.getIntExtra("question", 0);
         DB_NAME = String.format("question%02d.db",nomber);

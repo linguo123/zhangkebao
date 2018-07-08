@@ -1,7 +1,5 @@
 apply plugin: 'com.android.application'
 
-
-
 android {
     compileSdkVersion 25
     buildToolsVersion '26.0.2'
@@ -10,8 +8,11 @@ android {
 
     allprojects {
         repositories {
-            maven { url 'https://jitpack.io' }
+            maven { url "https://maven.google.com/"}
+            maven { url 'https://jitpack.io'
         }
+
+    }
     }
     defaultConfig {
         applicationId "com.example.a10146.demo2"
@@ -29,6 +30,7 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
         }
     }
 }
@@ -45,9 +47,10 @@ dependencies {
     compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha7'
     testCompile 'junit:junit:4.12'
     compile 'info.hoang8f:android-segmented:1.0.6'
-    compile 'com.google.android.gms:play-services-maps:10.2.4'
+  //  compile 'com.google.android.gms:play-services-maps:10.2.4'
     compile files('libs/open_sdk_r5990_lite.jar')
-    compile 'com.squareup.okhttp:okhttp:2.4.0'
+
+    compile 'com.squareup.okhttp3:okhttp:3.3.1'
     compile 'com.squareup.okio:okio:1.5.0'
     compile project(':pile')
     compile 'com.jakewharton:butterknife:8.5.1'

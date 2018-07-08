@@ -46,7 +46,8 @@ public class BarChartManager {
         //背景颜色
        mBarChart.setBackgroundColor(Color.WHITE);
         //网格
-        mBarChart.setDrawGridBackground(true);
+      //  mBarChart.setDrawGridBackground(true);
+        mBarChart.setDrawGridBackground(false);
         //背景阴影
        // mBarChart.setDrawBarShadow(false);
        // mBarChart.setHighlightFullBarEnabled(false);

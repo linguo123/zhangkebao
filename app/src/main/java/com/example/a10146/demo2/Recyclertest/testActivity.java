@@ -3,6 +3,7 @@ package com.example.a10146.demo2.Recyclertest;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -29,7 +30,8 @@ import com.example.a10146.demo2.professionalTest;
 
             Intent intent=getIntent();
 
-            professionalTest item= (professionalTest) intent.getSerializableExtra("News");
+            professionalTest item= (professionalTest) intent.getSerializableExtra(null);
+            Log.e("item", String.valueOf(item));
             testPhoto.setImageResource(item.getPhotoId());
             testTitle.setText(item.getTitle());
             testDesc.setText(item.getDesc());

@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,25 +13,46 @@ import android.widget.AdapterView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 
+import com.example.a10146.demo2.HttpConnectionUtil;
+import com.example.a10146.demo2.JsonContainer;
 import com.example.a10146.demo2.R;
+import com.example.a10146.demo2.TesQuestion.DownloadUtil;
 import com.example.a10146.demo2.TesQuestion.TestQueActivity;
 import com.example.a10146.demo2.adapter.QuestionAdapter;
+import com.github.mikephil.charting.charts.LineChart;
+import com.github.mikephil.charting.components.Legend;
+import com.github.mikephil.charting.components.XAxis;
+import com.github.mikephil.charting.components.YAxis;
+import com.github.mikephil.charting.data.Entry;
+import com.github.mikephil.charting.data.LineData;
+import com.github.mikephil.charting.data.LineDataSet;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 public class questionFragment extends Fragment{
-
+   private LineChart mLineChart;
 	private ListView lst_one,lst_two;
-	@Override
+
+	private String postdataUrl;
+	String dataversion;
+	String version="20180707";
+    private DownloadUtil  downloadUtil;
 	@Nullable
 	public View onCreateView(LayoutInflater inflater,
                              @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		View view= LayoutInflater.from(getActivity()).inflate(R.layout.fragment_question, null);
+		mLineChart = (LineChart) view.findViewById(R.id.lineChart);
+		linebar();
 		initView(view);
+
 		lst_one.setAdapter(new QuestionAdapter(getActivity(), getOneData()));
 		setListViewHeightBasedOnChildren(lst_one);
 		lst_two.setAdapter(new QuestionAdapter(getActivity(), getTwoData()));
@@ -43,44 +65,25 @@ public class questionFragment extends Fragment{
 				// TODO Auto-generated method stub
 				switch (position) {
 					case 0:
-						Intent intent = new Intent();
-						intent.putExtra("question", 00);
-						intent.setClass(getActivity(), TestQueActivity.class);
-						questionFragment.this.startActivity(intent);
-//						startActivity(new Intent().setClass(getActivity(),
-//								MyRoleActivity.class));
+						setVersion(00);
 						break;
 					case 1:
-						Intent intent1 = new Intent();
-						intent1.putExtra("question", 01);
-						intent1.setClass(getActivity(), TestQueActivity.class);
-						questionFragment.this.startActivity(intent1);
+						setVersion(01);
 						break;
 					case 2:
-						Intent intent2 = new Intent();
-						intent2.putExtra("question", 02);
-						intent2.setClass(getActivity(), TestQueActivity.class);
-						questionFragment.this.startActivity(intent2);
+						setVersion(02);
 						break;
 					case 3:
-						Intent intent3 = new Intent();
-						intent3.putExtra("question", 03);
-						intent3.setClass(getActivity(), TestQueActivity.class);
-						questionFragment.this.startActivity(intent3);
+						setVersion(03);
 						break;
-//					case 4:
-//						startActivity(new Intent().setClass(getActivity(),
-//								VIPActivity.class));
-//						break;
-//					case 5:
-//						startActivity(new Intent().setClass(getActivity(),
-//								GoToCollegeActivity.class));
-//						break;
+
 				}
 
 
 			}
 		});
+
+
 		return view;
 	}
 	
@@ -114,10 +117,7 @@ public class questionFragment extends Fragment{
 			return list;
 		}
 
-
 				public List<Map<String, Object>> getTwoData() {
-
-
 
 					List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
 
@@ -169,5 +169,83 @@ public class questionFragment extends Fragment{
 			params.height = totalHeight
 					+ (listView.getDividerHeight() * (listAdapter.getCount() - 1));
 			listView.setLayoutParams(params);
+		}
+		private void linebar(){
+			XAxis xAxis = mLineChart.getXAxis();
+			xAxis.setGranularity(1f);
+			xAxis.setLabelCount(12, false);
+			YAxis leftYAxis = mLineChart.getAxisLeft();
+			YAxis rightYAxis = mLineChart.getAxisRight();
+			rightYAxis.setEnabled(false);
+
+
+			Legend legend = mLineChart.getLegend();
+			legend.setEnabled(false);
+			//显示边界
+			mLineChart.setDrawBorders(true);
+			//设置数据
+			List<Entry> entries = new ArrayList<>();
+			for (int i = 0; i < 12; i++) {
+				entries.add(new Entry(i+1, (float) (Math.random()) * 50+50));
+			}
+			//一个LineDataSet就是一条线
+			LineDataSet lineDataSet = new LineDataSet(entries, "成绩");
+			xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
+			LineData data = new LineData(lineDataSet);
+			mLineChart.setData(data);
+
+		}
+		public  void  setVersion(final int value){
+			postdataUrl = "https://extlife.xyz/ability/getversion";
+			String posthttp = HttpConnectionUtil.getHttp().getRequset(postdataUrl,null);
+			JsonContainer<String> rootModel = new JsonContainer<String>();
+			Gson gson = new Gson();
+			rootModel = gson.fromJson(posthttp, new TypeToken<JsonContainer<String>>() {
+			}.getType());
+			if (rootModel.getStatus().equals("Success")) {
+				dataversion= rootModel.getData();
+//            String version = dataversion+"版本";
+				if (!Objects.equals(dataversion, version)){
+					String url="https://extlife.xyz/ability/getcache";
+					String path ="/data/data/com.example.a10146.demo2/databases/";
+					String name =String.format("question%02d.db",value);
+					DownloadUtil.get().download(url,path,name,new DownloadUtil.OnDownloadListener() {
+
+						@Override
+						public void onDownloadSuccess(File file) {
+							Log.e("DownloadSuccess","Success");
+							Intent intent = new Intent();
+							intent.putExtra("question", value);
+
+							intent.setClass(getActivity(), TestQueActivity.class);
+							questionFragment.this.startActivity(intent);
+
+
+						}
+
+						@Override
+						public void onDownloading(int progress) {
+
+						}
+
+						@Override
+						public void onDownloadFailed(Exception e) {
+                           Log.e("downloadFailed","fail");
+						}
+					});
+
+				}else {
+					Intent intent = new Intent();
+					intent.putExtra("question", value);
+
+					intent.setClass(getActivity(), TestQueActivity.class);
+					questionFragment.this.startActivity(intent);
+
+				}
+
+
+			}
+
+
 		}
 }

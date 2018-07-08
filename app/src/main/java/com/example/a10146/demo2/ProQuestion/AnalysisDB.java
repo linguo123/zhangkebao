@@ -12,9 +12,14 @@ import java.util.List;
 
 public class AnalysisDB {
     private SQLiteDatabase db;
+    private  int flag;
+    private String postdataUrl;
 
     //构造方法
     public AnalysisDB() {
+
+
+
         //连接数据库
         db = SQLiteDatabase.openDatabase("/data/data/com.example.a10146.demo2/databases/Analysis.db", null, SQLiteDatabase.OPEN_READWRITE);
 

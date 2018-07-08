@@ -84,7 +84,8 @@ public class MainActivity extends AppCompatActivity {
                   Intent intent = new Intent(MainActivity.this, HomePage.class);
                   startActivity(intent);
 
-               /*   String userinfodata;
+     /*
+                  String userinfodata;
                   String username = edit_username.getText().toString();
                   String password = edit_password.getText().toString();
                   Map<String, String> postmap = new HashMap<String, String>();
